@@ -14,11 +14,12 @@ displayandexec() {
   sh -c "$*" >> $log_file 2>&1
   local ret=$?
   if [ $ret -ne 0 ]; then
-    echo -e "\r\e[0;31m   [ERROR]\e[0m $message"
+    echo -e "\r\e[0;30m $message  \e[0;31m[ERROR]\e[0m"
   else
-    echo -e "\r\e[0;32m      [OK]\e[0m $message"
+    echo -e "\r\e[0;30m $message     \e[0;32m[OK]\e[0m"
   fi
   return $ret
 }
 #exemple :
 displayandexec "Installation de mediainfo" "apt-get install -y mediainfo"
+displayandexec "Installation de mediainfo" "apt-get install -y meinfo"
