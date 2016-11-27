@@ -3,7 +3,10 @@
 now=$(date +"%d-%m-%Y")
 log_file=/home/install/log_script_install-$now.log
 touch $log_file
-echo "Debut du script" > $log_file
+echo "############################################################" > $log_file
+echo "#                      Debut du script                     #" >> $log_file
+echo "############################################################" >> $log_file
+echo "" >> $log_file
 
 # Premier parametre: MESSAGE
 # Autres parametres: COMMAND
@@ -24,3 +27,8 @@ displayandexec() {
 #exemple :
 displayandexec "Installation de mediainfo" "apt-get install -y mediainfo"
 displayandexec "Installation de mediainfo" "apt-get install -y meinfo"
+
+echo "" >> $log_file
+echo "############################################################" > $log_file
+echo "#                       Fin du script                      #" >> $log_file
+echo "############################################################" >> $log_file
